@@ -23,6 +23,7 @@ const cartSlice = createSlice({
         existingItem.quantity++;
         existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
+      //never run sync or async code inside reducer that will create a side effect!
     },
     removeItemFromCart(state, action) {
       const id = action.payload;
